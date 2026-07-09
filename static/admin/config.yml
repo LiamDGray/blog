@@ -1,7 +1,9 @@
 backend:
   name: github
   repo: liamdgray/blog
-  branch: main
+  branch: master
+  base_url: https://blog.liamdgray.com
+  auth_endpoint: /admin/oauth
 
 media_folder: "static/images"
 public_folder: "/images"
@@ -11,7 +13,7 @@ collections:
     label: "Blog Posts"
     folder: "content/blog"
     create: true
-    path: "{{slug}}/index"
+    path: "{{slug}}"
     media_folder: ""
     public_folder: ""
     fields:
