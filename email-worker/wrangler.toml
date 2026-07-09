@@ -1,0 +1,8 @@
+name = "email-forwarder"
+main = "index.js"
+compatibility_date = "2026-07-09"
+
+[env.production]
+routes = [
+  { pattern = "subscribe@liamdgray.com", script = "email-forwarder" },
+]
