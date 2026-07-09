@@ -16,11 +16,11 @@ pagerSize = 10
 [params]
   description = "Personal blog by LiamDGray"
   github = "https://github.com/liamdgray"
-  giscus_enable = false
-  giscus_repo = ""
-  giscus_repo_id = ""
+  giscus_enable = true
+  giscus_repo = "LiamDGray/blog"
+  giscus_repo_id = "R_kgDOTTtdJg"
   giscus_category = "Announcements"
-  giscus_category_id = ""
+  giscus_category_id = "DIC_kwDOTTtdJs4DA2rS"
 
 [taxonomies]
   tag = "tags"
