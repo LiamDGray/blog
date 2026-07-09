@@ -1,0 +1,29 @@
+baseURL = "https://blog.liamdgray.com"
+title = "LiamDGray"
+theme = "minimal"
+[pagination]
+pagerSize = 10
+enableRobotsTXT = true
+languageCode = "en-us"
+DefaultContentLanguage = "en"
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+
+[params]
+  description = "Personal blog by LiamDGray"
+  github = "https://github.com/liamdgray"
+  giscus_enable = false
+  giscus_repo = ""
+  giscus_repo_id = ""
+  giscus_category = "Announcements"
+  giscus_category_id = ""
+
+[taxonomies]
+  tag = "tags"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

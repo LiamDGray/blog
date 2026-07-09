@@ -1,0 +1,16 @@
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <p>&copy; {{ now.Format "2006" }} <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>. All rights reserved.</p>
+    </div>
+    <div class="footer-col subscribe-col">
+      <form class="subscribe-form" action="/api/subscribe" method="POST">
+        <label for="subscribe-email">Subscribe via email</label>
+        <div class="subscribe-row">
+          <input type="email" id="subscribe-email" name="email" placeholder="your@email.com" required>
+          <button type="submit">Subscribe</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,5 @@
+[theme]
+name = "minimal"
+description = "A clean dark minimal theme for LiamDGray's blog"
+author = "LiamDGray"
+min_version = "0.145.0"

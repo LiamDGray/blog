@@ -1,0 +1,12 @@
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="{{ .Site.BaseURL | relLangURL }}">{{ .Site.Title }}</a>
+    <nav class="site-nav">
+      <a href="{{ "blog/" | relURL }}">Blog</a>
+      {{ with .Site.Params.github }}
+      <a href="{{ . }}" target="_blank" rel="noopener" title="GitHub">GitHub</a>
+      {{ end }}
+      <a href="{{ with .OutputFormats.Get "RSS" }}{{ .Permalink }}{{ end }}" title="RSS Feed">RSS</a>
+    </nav>
+  </div>
+</header>
