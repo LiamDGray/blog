@@ -1,11 +1,13 @@
 baseURL = "https://blog.liamdgray.com"
 title = "LiamDGray"
 theme = "minimal"
-[pagination]
-pagerSize = 10
 enableRobotsTXT = true
+enableGitInfo = true
 languageCode = "en-us"
 DefaultContentLanguage = "en"
+
+[pagination]
+pagerSize = 10
 
 [outputs]
   home = ["HTML", "RSS"]

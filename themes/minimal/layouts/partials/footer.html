@@ -1,7 +1,12 @@
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-col">
-      <p>&copy; {{ now.Format "2006" }} <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>. All rights reserved.</p>
+      <p>&copy; {{ now.Format "2006" }} <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>.</p>
+      {{- with .Lastmod }}
+      <p class="footer-meta">Page modified: {{ .Format "2006-01-02" }} {{ .Format "15:04" }}
+        {{- with $.GitInfo }} · <a href="https://github.com/LiamDGray/blog/commit/{{ .Hash }}" target="_blank" rel="noopener">{{ .AbbreviatedHash }}</a>{{ end -}}
+      </p>
+      {{- end }}
     </div>
     <div class="footer-col subscribe-col">
       <form class="subscribe-form" action="/api/subscribe" method="POST">
