@@ -9,7 +9,7 @@
 
 set -euo pipefail
 
-FROM_EMAIL="blog@liamdgray.com"
+FROM_EMAIL="liam@liamdgray.com"
 FROM_NAME="Liam D Gray"
 BREVO_API_BASE="https://api.brevo.com/v3"
 ORIGIN="${ORIGIN:-https://blog.liamdgray.com}"

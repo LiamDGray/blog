@@ -5,7 +5,7 @@
 // Flow:
 //   1. Validates email
 //   2. Creates/updates contact in Brevo (list ID 2 = default; configure as needed)
-//   3. Sends a welcome transactional email from blog@liamdgray.com
+//   3. Sends a welcome transactional email from liam@liamdgray.com
 //   4. Returns success or error response
 //
 // To use double opt-in, set DOUBLE_OPTIN=true in env; a confirmation link is
@@ -13,7 +13,7 @@
 // Single opt-in (default) creates the contact as active immediately.
 
 const BREVO_API_BASE = "https://api.brevo.com/v3";
-const FROM_EMAIL = "blog@liamdgray.com";
+const FROM_EMAIL = "liam@liamdgray.com";
 const FROM_NAME = "Liam D Gray";
 
 // ── Validation ──────────────────────────────────────────────────────
