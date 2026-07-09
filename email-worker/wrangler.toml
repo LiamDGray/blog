@@ -2,7 +2,5 @@ name = "email-forwarder"
 main = "index.js"
 compatibility_date = "2026-07-09"
 
-[env.production]
-routes = [
-  { pattern = "subscribe@liamdgray.com", script = "email-forwarder" },
-]
+# Email routing rules are configured at zone level in CF Dashboard.
+# This worker handles emails routed from Email Routing → Workers.
