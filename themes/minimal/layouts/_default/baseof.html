@@ -37,7 +37,7 @@
 
   <!-- Same stylesheet as liamdgray.com, so the palette and type cannot drift. -->
   <link rel="stylesheet" href="https://liamdgray.com/css/style.css">
-  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}?v={{ now.Unix }}">
   <script>
     (function(){try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();
   </script>

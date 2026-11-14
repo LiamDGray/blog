@@ -5,13 +5,32 @@
    Nothing here defines colours.
    ============================================================ */
 
-main {
-  width: 100%;
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 0 1.25rem 4rem;
-  flex: 1;
+/* Theme-aware UA chrome (scrollbars, form controls) and no default blue. */
+:root { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { color-scheme: dark; }
 }
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+a, a:visited, .post-content a { color: var(--accent); }
+a:hover, .post-content a:hover { color: var(--accent-hover); }
+
+:focus,
+:focus-visible {
+  outline-color: var(--border-focus);
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--text-primary);
+}
+
+input, textarea, select, button { accent-color: var(--accent); }
 
 /* ---------- List page ---------- */
 
