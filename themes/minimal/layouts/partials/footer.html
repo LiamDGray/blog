@@ -1,21 +1,32 @@
-<footer class="site-footer">
+<footer>
   <div class="footer-inner">
     <div class="footer-col">
-      <p>&copy; {{ now.Format "2006" }} <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>.</p>
-      {{- with .Lastmod }}
-      <p class="footer-meta">Page modified: {{ .Format "2006-01-02" }} {{ .Format "15:04" }}
-        {{- with $.GitInfo }} · <a href="https://github.com/LiamDGray/blog/commit/{{ .Hash }}" target="_blank" rel="noopener">{{ .AbbreviatedHash }}</a>{{ end -}}
-      </p>
-      {{- end }}
+      <h4>Liam D. Gray</h4>
+      <p>Technical editing &mdash; documents checked for accuracy, consistency, and completeness, with a change log explaining every change.</p>
     </div>
-    <div class="footer-col subscribe-col">
+    <div class="footer-col">
+      <h4>Pages</h4>
+      <a href="https://liamdgray.com/">Home</a>
+      <a href="https://liamdgray.com/services.html">Editing</a>
+      <a href="https://liamdgray.com/portfolio.html">Portfolio</a>
+      <a href="https://blog.liamdgray.com/blog/">Blog</a>
+      <a href="https://liamdgray.com/about.html">About</a>
+      <a href="https://liamdgray.com/contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Subscribe</h4>
       <form class="subscribe-form" action="/api/subscribe" method="POST">
-        <label for="subscribe-email">Subscribe via email</label>
+        <label for="subscribe-email" class="sr-only">Email address</label>
         <div class="subscribe-row">
           <input type="email" id="subscribe-email" name="email" placeholder="your@email.com" required>
-          <button type="submit">Subscribe</button>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
         </div>
       </form>
+      <a href="/index.xml">RSS feed</a>
     </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; {{ now.Format "2006" }} Liam D. Gray.</p>
+    <a href="https://liamdgray.com/contact.html">Contact Form</a>
   </div>
 </footer>
