@@ -32,10 +32,18 @@ a:hover, .post-content a:hover { color: var(--accent-hover); }
 
 input, textarea, select, button { accent-color: var(--accent); }
 
+main {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: calc(var(--nav-height, 60px) + 2.5rem) 1.25rem 4rem;
+  flex: 1;
+}
+
 /* ---------- List page ---------- */
 
 .list-page .page-header {
-  padding: 3rem 0 1.5rem;
+  padding: 0 0 1.5rem;
   text-align: left;
   background: none;
   border-bottom: 1px solid var(--border-color);
@@ -91,7 +99,7 @@ input, textarea, select, button { accent-color: var(--accent); }
 /* ---------- Single post ---------- */
 
 .single-post .post-header {
-  padding: 3rem 0 1.5rem;
+  padding: 0 0 1.5rem;
   border-bottom: 1px solid var(--border-color);
   margin-bottom: 2rem;
 }
@@ -130,7 +138,17 @@ input, textarea, select, button { accent-color: var(--accent); }
   margin: 2.5rem 0;
 }
 
-.post-nav {
+/* The main stylesheet treats a bare `nav` as the fixed site header.
+   The prev/next control is also a <nav>, so it opts out explicitly. */
+nav.post-nav {
+  position: static;
+  height: auto;
+  background: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  border: 0;
+  border-top: 1px solid var(--border-color);
+  z-index: auto;
   display: flex;
   justify-content: space-between;
   gap: 1rem;
