@@ -1,6 +1,6 @@
 +++
 title = "What I check in an API reference"
-date = 2026-11-14T09:00:00Z
+date = 2026-11-13T17:00:00Z
 tags = ["editing", "api", "documentation"]
 +++
 

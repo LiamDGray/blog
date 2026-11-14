@@ -1,6 +1,6 @@
 +++
 title = "The number that gets trusted"
-date = 2026-11-14T09:20:00Z
+date = 2026-11-13T17:10:00Z
 tags = ["editing", "documentation", "risk"]
 +++
 

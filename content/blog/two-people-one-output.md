@@ -1,6 +1,6 @@
 +++
 title = "Two people, one output"
-date = 2026-11-14T09:40:00Z
+date = 2026-11-13T17:20:00Z
 tags = ["editing", "evidence", "llm"]
 +++
 
