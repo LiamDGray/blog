@@ -3,10 +3,14 @@
     <a class="site-title" href="{{ .Site.BaseURL | relLangURL }}">{{ .Site.Title }}</a>
     <nav class="site-nav">
       <a href="{{ "blog/" | relURL }}">Blog</a>
+      <a href="https://liamdgray.com">Editing</a>
       {{ with .Site.Params.github }}
       <a href="{{ . }}" target="_blank" rel="noopener" title="GitHub">GitHub</a>
       {{ end }}
-      <a href="{{ with .OutputFormats.Get "RSS" }}{{ .Permalink }}{{ end }}" title="RSS Feed">RSS</a>
+      {{ with .Site.Home.OutputFormats.Get "RSS" }}
+      <a href="{{ .Permalink }}" title="RSS feed">RSS</a>
+      {{ end }}
+      <button class="theme-toggle" type="button" aria-label="Switch colour theme">Dark</button>
     </nav>
   </div>
 </header>
