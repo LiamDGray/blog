@@ -29,7 +29,7 @@ I hadn't articulated that to myself before. The tool saw the pattern in my submi
 
 ## Free for the HN community
 
-Intersect is available now at **[intersect.liamdgray.com](https://demo.liamdgray.com/intersect/)**. Try it with your own HN username (or anyone else's).
+Intersect runs locally for now. I have published **[real output for two Hacker News profiles](/intersect-examples/)** so you can see what it produces before asking anyone for access.
 
 Currently supported platforms:
 - **Hacker News** — via the Algolia API (your submissions and comments)
@@ -45,7 +45,7 @@ Each platform produces a slightly different analysis (HN surfaces the papers you
 
 The engine is brand new. I'd love to know: does it find your interests accurately? What platforms would you add? What papers did it miss?
 
-Try it: **[intersect.liamdgray.com](https://demo.liamdgray.com/intersect/)** — submit your profile and see your intersection.
+See it: **[example output for two Hacker News profiles](/intersect-examples/)** — and if you want yours run, [send me a note](https://liamdgray.com/contact.html) with the profile URL.
 
 ---
 
