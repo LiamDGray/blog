@@ -39,7 +39,15 @@
   <link rel="stylesheet" href="https://liamdgray.com/css/style.css">
   <link rel="stylesheet" href="{{ "css/style.css" | relURL }}?v={{ now.Unix }}">
   <script>
-    (function(){try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();
+    (function(){
+      function read(){
+        try{var m=document.cookie.match(/(?:^|;\s*)theme=(dark|light)(?:;|$)/);if(m)return m[1];}catch(e){}
+        try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')return t;}catch(e){}
+        return null;
+      }
+      var t=read();
+      if(t)document.documentElement.setAttribute('data-theme',t);
+    })();
   </script>
   {{ block "head_extra" . }}{{ end }}
 </head>
@@ -52,21 +60,59 @@
   <script>
     (function(){
       var root = document.documentElement;
-      function isDark(){
-        return root.getAttribute('data-theme') === 'dark' ||
-          (!root.getAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+      function readCookie(){
+        try{var m=document.cookie.match(/(?:^|;\s*)theme=(dark|light)(?:;|$)/);if(m)return m[1];}catch(e){}
+        return null;
       }
+
+      function writeTheme(t){
+        try{localStorage.setItem('theme',t);}catch(e){}
+        try{
+          var secure = location.protocol === 'https:' ? '; Secure' : '';
+          var domain = (location.hostname === 'liamdgray.com' || /\.liamdgray\.com$/.test(location.hostname))
+            ? '; Domain=liamdgray.com' : '';
+          document.cookie = 'theme=' + t + '; Path=/; Max-Age=31536000; SameSite=Lax' + domain + secure;
+        }catch(e){}
+      }
+
+      function isDark(){
+        var attr = root.getAttribute('data-theme');
+        if(attr) return attr === 'dark';
+        var c = readCookie();
+        if(c) return c === 'dark';
+        try{var s=localStorage.getItem('theme');if(s==='dark'||s==='light')return s==='dark';}catch(e){}
+        return window.matchMedia('(prefers-color-scheme: dark)').matches;
+      }
+
       var btn = document.querySelector('.theme-toggle');
+      function label(){
+        if(!btn) return;
+        var dark = isDark();
+        btn.textContent = dark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(dark));
+        btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+      }
       if (btn) {
-        function label(){ btn.textContent = isDark() ? 'Light' : 'Dark'; }
         label();
         btn.addEventListener('click', function(){
           var next = isDark() ? 'light' : 'dark';
           root.setAttribute('data-theme', next);
-          try { localStorage.setItem('theme', next); } catch (e) {}
+          writeTheme(next);
           label();
         });
       }
+
+      // The main site writes the same cookie from its own subdomain, so re-read
+      // it when this tab regains focus.
+      window.addEventListener('focus', function(){
+        var c = readCookie();
+        if (c && c !== root.getAttribute('data-theme')) {
+          root.setAttribute('data-theme', c);
+          label();
+        }
+      });
+
       var navToggle = document.querySelector('.nav-toggle');
       var navLinks = document.getElementById('nav-links');
       if (navToggle && navLinks) {
